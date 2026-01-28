@@ -1,15 +1,87 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import { ViewTransitions } from "next-view-transitions";
+import { ReactLenis } from "@/lib/lenis";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import MainScrollerTrigger from "@/components/layout/MainScrollerTrigger";
+
+import "./globals.css";
+import { CursorProvider } from "@/hooks/useCursorProvider";
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const satoshi = localFont({
+  src: [
+    {
+      path: "../public/fonts/Satoshi-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi-LightItalic.ttf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Satoshi-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Satoshi-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi-MediumItalic.ttf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Satoshi-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/Satoshi-Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi-BlackItalic.ttf",
+      weight: "900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-satoshi",
+});
+
+const satoshiVariable = localFont({
+  src: [
+    {
+      path: "../public/fonts/Satoshi-Variable.ttf",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Satoshi-VariableItalic.ttf",
+      style: "italic",
+    },
+  ],
+  variable: "--font-satoshi-variable",
 });
 
 export const metadata: Metadata = {
@@ -23,12 +95,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="es">
+        <ReactLenis root>
+          <CursorProvider>
+            <body
+              className={`${inter.variable} ${satoshi.variable} ${satoshiVariable.variable} font-inter antialiased`}
+            >
+              <MainScrollerTrigger>{children}</MainScrollerTrigger>
+            </body>
+          </CursorProvider>
+        </ReactLenis>
+      </html>
+    </ViewTransitions>
   );
 }

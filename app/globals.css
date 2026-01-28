@@ -1,26 +1,305 @@
 @import "tailwindcss";
 
+/* Satoshi Font Family */
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Satoshi Variable Font */
+@font-face {
+  font-family: "Satoshi Variable";
+  src: url("/fonts/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi Variable";
+  src: url("/fonts/Satoshi-VariableItalic.ttf") format("truetype");
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #ffffff;
+  --fg: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --font-inter: var(--font-inter);
+  --font-satoshi: "Satoshi", sans-serif;
+  --font-satoshi-variable: "Satoshi Variable", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 10000;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
+}
+
+*,
+*::before,
+*::after,
+html,
+body {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--fg);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.main .header {
+  background-color: inherit;
+  color: inherit;
+}
+
+.button {
+  @apply text-xl font-medium italic flex flex-row items-center justify-center py-2 rounded-full cursor-pointer bg-[#fff] text-[#070707] mix-blend-difference;
+}
+
+.revealer {
+  @apply fixed top-0 left-0 w-[100vw] h-[100svh];
+  transform-origin: center top;
+  background-color: var(--fg);
+  pointer-events: none;
+  z-index: 100;
+}
+
+.grid-stack {
+  @apply relative w-[100%] h-[60%] flex flex-col;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.mobile.grid-stack {
+  @apply relative w-[100%] min-h-max h-fit;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.grid-row,
+.grid-item {
+  @apply flex-1 flex justify-between items-center h-full;
+}
+
+.grid-item {
+  @apply py-8;
+}
+
+.grid-row:nth-child(1) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.grid-row:nth-child(2) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.grid-item:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.grid-item p {
+  @apply relative z-[2];
+}
+
+.highlight {
+  @apply absolute top-0 left-0 bg-white;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.mobile.grid-stack .grid-row {
+  @apply grid grid-cols-2 min-h-full;
+}
+
+.mobile.grid-stack .grid-item {
+  @apply h-44 col-span-2;
+}
+
+@media (min-width: 460px) {
+  .mobile.grid-stack .grid-item {
+    @apply h-44 col-span-1;
+  }
+}
+
+.mobile.grid-stack .grid-row:nth-child(1) {
+  border-bottom: none;
+}
+
+.mobile.grid-stack .grid-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: none;
+}
+
+.mobile.grid-stack .grid-item:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-right: none;
+}
+
+.mobile.grid-stack .grid-item:nth-child(even) {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.mobile.grid-stack .grid-item:is(:last-child) {
+  @apply col-span-2;
+}
+
+.animate-text {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.15rem;
+  line-height: 1.125;
+  text-align: center;
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+  color: #4f4f4f;
+  --clip-value: 100%;
+}
+
+.animate-text::before {
+  content: attr(data-text);
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  color: #fff;
+  clip-path: inset(0 0 var(--clip-value) 0);
+  will-change: clip-path;
+}
+
+@media (min-width: 1000px) {
+  .animate-text {
+    font-size: 3.5rem;
+    letter-spacing: -0.05rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .animate-text {
+    width: 90%;
+    font-size: 4.5rem;
+  }
 }
