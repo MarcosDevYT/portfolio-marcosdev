@@ -8,20 +8,24 @@ export const TitleSection = ({
   secondTitle?: string;
 }) => {
   return (
-    <ContainerReveal>
+    <>
       {secondTitle ? (
-        <div className="min-w-full ">
-          <h2 className="text-7xl italic font-light flex flex-row items-center justify-between">
+        <h2 className="w-full text-7xl italic font-light flex flex-col md:flex-row items-center gap-6 justify-between">
+          <ContainerReveal>
             <span>{title}</span>
+          </ContainerReveal>
 
+          <ContainerReveal>
             <span>{secondTitle}</span>
-          </h2>
-        </div>
-      ) : (
-        <h2 className="w-full text-7xl italic text-center font-light">
-          {title}
+          </ContainerReveal>
         </h2>
+      ) : (
+        <ContainerReveal>
+          <h2 className="w-full text-7xl italic text-center font-light">
+            {title}
+          </h2>
+        </ContainerReveal>
       )}
-    </ContainerReveal>
+    </>
   );
 };

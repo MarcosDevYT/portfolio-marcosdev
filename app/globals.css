@@ -175,7 +175,21 @@ html.lenis body {
   color: inherit;
 }
 
-.button {
+/* Trail Images - personalizable y responsive */
+.trail-img {
+  position: absolute;
+  width: 240px;
+  height: 138px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transform-origin: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.main .button {
   @apply text-xl font-medium italic flex flex-row items-center justify-center py-2 rounded-full cursor-pointer bg-[#fff] text-[#070707] mix-blend-difference;
 }
 
@@ -238,12 +252,6 @@ html.lenis body {
   @apply h-44 col-span-2;
 }
 
-@media (min-width: 460px) {
-  .mobile.grid-stack .grid-item {
-    @apply h-44 col-span-1;
-  }
-}
-
 .mobile.grid-stack .grid-row:nth-child(1) {
   border-bottom: none;
 }
@@ -288,6 +296,18 @@ html.lenis body {
   color: #fff;
   clip-path: inset(0 0 var(--clip-value) 0);
   will-change: clip-path;
+}
+
+/*
+
+  Media queries
+
+*/
+
+@media (min-width: 460px) {
+  .mobile.grid-stack .grid-item {
+    @apply h-44 col-span-1;
+  }
 }
 
 @media (min-width: 1000px) {
