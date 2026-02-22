@@ -9,6 +9,8 @@ import { HeroSection } from "@/components/layout/home/HeroSection";
 import { AboutSection } from "@/components/layout/home/AboutSection";
 import Cursor from "@/components/cursor/Cursor";
 
+export const dynamic = "force-static";
+
 export default function Home() {
   return (
     <>

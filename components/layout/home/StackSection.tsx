@@ -37,15 +37,15 @@ export const StackSection = () => {
       highlight.style.transform = `translate(${
         rect.left - containerRect.left - 1
       }px, ${rect.top - containerRect.top - 1}px)`;
-      highlight.style.width = `${rect.width}px`;
-      highlight.style.height = `${rect.height}px`;
+      highlight.style.width = `${rect.width + 1}px`;
+      highlight.style.height = `${rect.height + 1}px`;
       highlight.style.backgroundColor = element.dataset.color || "transparent";
     };
 
     const moveHighlight = (e: MouseEvent | globalThis.MouseEvent) => {
       const hoveredElements = document.elementsFromPoint(e.clientX, e.clientY);
       const gridElement = hoveredElements.find((el) =>
-        el.classList.contains("grid-item")
+        el.classList.contains("grid-item"),
       ) as HTMLElement | undefined;
 
       if (gridElement) moveToElement(gridElement);
@@ -58,7 +58,7 @@ export const StackSection = () => {
     return () => {
       container.removeEventListener(
         "mousemove",
-        moveHighlight as EventListener
+        moveHighlight as EventListener,
       );
     };
   }, [isMobile]);
@@ -109,31 +109,40 @@ export const StackSection = () => {
             onMouseEnter={handleDesapearMouseEnter}
             onMouseLeave={handleDesapearMouseLeave}
           >
-            {stackItems.map((row) => (
-              <div className="grid-row" key={row.id}>
-                {row.items.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      className="grid-item group flex flex-col justify-center items-center"
-                      key={item.title}
-                    >
-                      <Icon
-                        size={isDesktop ? 64 : 48}
-                        className={`relative mix-blend-difference text-white  stroke-white z-[2] transition-all duration-200  group-hover:stroke-white ${
-                          item.personalizado && "w-20 lg:w-24 h-16"
-                        } ${item.next && "w-28 lg:w-32 h-16"} ${
-                          !item.fillNone && "fill-white group-hover:fill-white"
-                        }`}
-                      />
-                      <p className="mt-3 mix-blend-difference text-white group-hover:text-white transition-colors duration-100">
-                        {item.title}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
+            {stackItems.map((row) => {
+              const firstRow = row.id === 0;
+
+              return (
+                <div
+                  className={`grid-row ${firstRow ? "first-row" : ""}`}
+                  key={row.id}
+                >
+                  {row.items.map((item, index) => {
+                    const Icon = item.icon;
+
+                    return (
+                      <div
+                        className="grid-item group flex flex-col justify-center items-center"
+                        key={index}
+                      >
+                        <Icon
+                          size={isDesktop ? (firstRow ? 124 : 64) : 48}
+                          className={`relative mix-blend-difference text-white  stroke-white z-[2] transition-all duration-200  group-hover:stroke-white ${
+                            item.personalizado && "w-20 lg:w-28 h-16"
+                          } ${item.next && firstRow ? "w-28 lg:w-72 h-16 md:h-20" : `w-28 lg:w-32 ${firstRow ? "md:h-24" : "h-16"}`} ${
+                            !item.fillNone &&
+                            "fill-white group-hover:fill-white"
+                          }`}
+                        />
+                        <p className="mt-3 mix-blend-difference text-white group-hover:text-white transition-colors duration-100">
+                          {item.title}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
             <div className="highlight" ref={highlightRef} />
           </div>
         )}

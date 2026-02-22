@@ -11,10 +11,10 @@ export const AboutSection = () => {
       <div className="flex flex-col lg:flex-row gap-24 justify-center items-center lg:items-start h-full lg:h-[600px]">
         <figure className="relative w-[300px] h-[400px] lg:w-1/2 lg:h-[525px]">
           <Image
-            src={"/gsap.svg"}
+            src={"/about.jpg"}
             alt="Imagen de MarcosDev"
             fill
-            objectFit="cover"
+            className="rounded-lg object-cover"
           />
         </figure>
 

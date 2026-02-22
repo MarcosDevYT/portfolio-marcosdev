@@ -202,15 +202,13 @@ html.lenis body {
 }
 
 .grid-stack {
-  @apply relative w-[100%] h-[60%] flex flex-col;
+  @apply relative w-[100%] h-[70%] flex flex-col;
   margin: 0 auto;
-  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .mobile.grid-stack {
   @apply relative w-[100%] min-h-max h-fit;
   margin: 0 auto;
-  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .grid-row,
@@ -220,18 +218,7 @@ html.lenis body {
 
 .grid-item {
   @apply py-8;
-}
-
-.grid-row:nth-child(1) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.grid-row:nth-child(2) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.grid-item:not(:last-child) {
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .grid-item p {
@@ -248,30 +235,12 @@ html.lenis body {
   @apply grid grid-cols-2 min-h-full;
 }
 
+.grid-stack .grid-item {
+  @apply h-44;
+}
+
 .mobile.grid-stack .grid-item {
   @apply h-44 col-span-2;
-}
-
-.mobile.grid-stack .grid-row:nth-child(1) {
-  border-bottom: none;
-}
-
-.mobile.grid-stack .grid-item:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  border-right: none;
-}
-
-.mobile.grid-stack .grid-item:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  border-right: none;
-}
-
-.mobile.grid-stack .grid-item:nth-child(even) {
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.mobile.grid-stack .grid-item:is(:last-child) {
-  @apply col-span-2;
 }
 
 .animate-text {
@@ -314,6 +283,14 @@ html.lenis body {
   .animate-text {
     font-size: 3.5rem;
     letter-spacing: -0.05rem;
+  }
+
+  .grid-stack .first-row {
+    @apply h-60;
+  }
+
+  .grid-stack .first-row .grid-item {
+    @apply h-60;
   }
 }
 

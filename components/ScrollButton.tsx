@@ -33,7 +33,7 @@ export function ScrollButton({
       onMouseLeave={handleActiveMouseLeave}
     >
       <ContainerReveal delay={delay}>
-        <span>{title}</span>
+        <span className="text-base">{title}</span>
       </ContainerReveal>
     </button>
   );

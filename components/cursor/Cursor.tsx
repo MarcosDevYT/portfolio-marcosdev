@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { useCursorHover } from "@/hooks/useCursorProvider";
 import { useEffect, useRef } from "react";
+import { ArrowBigDownDash, ArrowUp, ArrowUpRight } from "lucide-react";
 
 export default function Cursor() {
   const { isDesapear, isActive, isLink } = useCursorHover();
@@ -63,8 +64,10 @@ export default function Cursor() {
         height: `${isDesapear ? 0 : size}px`,
         transition: `height 0.3s ease-out, width 0.3s ease-out, filter 0.3s ease-out`,
       }}
-      className={`top-0 left-0 fixed bg-white mix-blend-difference rounded-full pointer-events-none z-[50]`}
+      className={`top-0 left-0 fixed flex flex-col items-center justify-center text-2xl font-bold text-black ${isLink ? "bg-violet-400" : "mix-blend-difference bg-white"} rounded-full pointer-events-none z-[50]`}
       ref={circle}
-    />
+    >
+      {isLink && <ArrowUpRight size={80} />}
+    </div>
   );
 }
