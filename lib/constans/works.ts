@@ -1,0 +1,92 @@
+export const TrabajosDestacados = [
+  {
+    id: 1,
+    title: "Ultramadness",
+    description:
+      "Plataforma web para gestión y visualización de eventos musicales con sistema de captación de leads y CMS integrado. Implementación de autenticación, base de datos relacional y envío de emails transaccionales.",
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Framer Motion",
+      "Auth.js",
+      "Prisma",
+      "PostgreSQL",
+      "Sanity",
+      "Resend",
+    ],
+    fecha: "2025",
+    fechaCompleta: "2025",
+    image: "/ultramadness.jpg",
+    link: "",
+  },
+  {
+    id: 2,
+    title: "IdeasDev",
+    description:
+      "Aplicación SaaS basada en inteligencia artificial para generación de ideas y seguimiento de proyectos. Incluye sistema de chat contextual, generación automática de tareas y resúmenes, con arquitectura full stack y persistencia de datos.",
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Framer Motion",
+      "Auth.js",
+      "Prisma",
+      "PostgreSQL",
+      "Nodemailer",
+    ],
+    fecha: "2026",
+    fechaCompleta: "2026",
+    image: "/ideasdev.jpg",
+    link: "",
+  },
+  {
+    id: 3,
+    title: "AFOCAT360",
+    description:
+      "Aplicación móvil desarrollada con React Native para consulta y validación de certificados AFOCAT. Implementación de búsquedas dinámicas, historial de registros y experiencia optimizada para dispositivos móviles.",
+    stack: ["Expo", "React Native", "NativeWind"],
+    fecha: "2025",
+    fechaCompleta: "2025",
+    image: "/afocat360.jpg",
+    link: "",
+  },
+  {
+    id: 4,
+    title: "Profiler",
+    description:
+      "Herramienta web de análisis de perfiles con integración de múltiples modelos de inteligencia artificial (OpenAI, Google AI y Groq). Desarrollo full stack con autenticación segura, CMS y base de datos relacional.",
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Sanity",
+      "Auth.js",
+      "Prisma",
+      "PostgreSQL",
+      "OpenAI",
+      "Google AI",
+      "Groq AI",
+    ],
+    fecha: "2025",
+    fechaCompleta: "2025",
+    image: "/profiler.jpg",
+    link: "",
+  },
+];
+
+export const ListaDeTrabajos = [
+  {
+    id: 1,
+    title: "Trabajo 1",
+    description: "Descripción del trabajo 1",
+    stack: ["React", "Next.js", "Tailwind CSS"],
+    fecha: "2025",
+    fechaCompleta: "Febrero 2026",
+    image: "/work1.jpg",
+    link: "",
+  },
+];

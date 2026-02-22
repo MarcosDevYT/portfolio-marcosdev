@@ -1,50 +1,74 @@
 "use client";
 
+import { useState } from "react";
+import { Menu } from "lucide-react";
+import NavMenu from "./NavMenu";
 import Link from "next/link";
-import { TransitionLinks } from "../TransitionLinks";
-import { ContainerReveal } from "../ContainerReveal";
-import { BiMenuAltRight } from "react-icons/bi";
-import { ScrollButton } from "../ScrollButton";
+import MenuToggle from "../MenuToggle";
+import { ScrollButton } from "../animate-components/ScrollButton";
+import { useCursorHover } from "@/lib/hooks/useCursorProvider";
+import { TextReveal } from "../animate-components/ContainerReveal";
+import { TransitionLinks } from "../animate-components/TransitionLinks";
 
-export const Navbar = () => {
+const Navbar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const { handleActiveMouseEnter, handleActiveMouseLeave } = useCursorHover();
+
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu);
+  };
+
   return (
-    <header className="header z-50 sticky top-0 left-0 w-full h-16 px-8">
-      <nav className="w-full h-full flex items-center justify-between relative">
-        <ContainerReveal delay={2}>
-          <Link href={"/"} className="font-medium text-2xl font-satoshi ">
-            MarcosDev
-          </Link>
-        </ContainerReveal>
+    <>
+      <header className="fixed z-10 mix-blend-difference text-white top-0 left-0 w-full">
+        <nav className="font-satoshi-variable relative px-4 md:px-8 lg:px-12 2xl:px-16 flex justify-between items-center w-full h-16 md:h-20 py-3 md:py-4 transition-all">
+          <MenuToggle button={toggleMenu} icon={<Menu size={36} />} />
 
-        <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-1/2 flex-row items-center gap-4">
-          <TransitionLinks className="text-lg" href="/" title="Inicio" />
-          <TransitionLinks
-            className="text-lg"
-            href="/sobre-mi"
-            title="Sobre mi"
-          />
-          <TransitionLinks
-            className="text-lg"
-            href="/trabajos"
-            title="Trabajos"
-          />
-        </div>
+          <div
+            onMouseEnter={handleActiveMouseEnter}
+            onMouseLeave={handleActiveMouseLeave}
+            className="absolute top-1/2 left-1/2 -translate-1/2"
+          >
+            <TransitionLinks
+              className="font-medium text-xl md:text-3xl flex flex-col items-center justify-center leading-none"
+              delay={2.1}
+              href="/"
+              title={
+                <>
+                  <span>MARCOS</span>
+                  <span>MORUA</span>
+                </>
+              }
+            />
+          </div>
 
-        <div className="flex flex-row items-center gap-4">
-          <ScrollButton
-            className="button px-4 text-base"
-            sectionId="#contacto"
-            title="Hablemos"
-            delay={2}
-          />
+          <div className="h-full flex flex-row items-center justify-center gap-12">
+            <div className="hidden md:block">
+              <TextReveal delay={2.1}>
+                <h2 className="uppercase flex flex-col items-center text-center justify-center text-2xl leading-6">
+                  Trabajando
+                  <span className="text-gray">Desde 2024</span>
+                </h2>
+              </TextReveal>
+            </div>
 
-          <ContainerReveal delay={2}>
-            <button className="button px-2">
-              <BiMenuAltRight size={20} />
-            </button>
-          </ContainerReveal>
-        </div>
-      </nav>
-    </header>
+            <ScrollButton
+              className="cursor-pointer h-full text-lg md:text-xl font-medium bg-foreground text-background px-5 md:px-8 flex flex-col items-center justify-center"
+              sectionId="#contact"
+              delay={2.1}
+              title="Hablemos"
+            />
+          </div>
+        </nav>
+      </header>
+      <NavMenu
+        handleActiveMouseEnter={handleActiveMouseEnter}
+        handleActiveMouseLeave={handleActiveMouseLeave}
+        openMenu={openMenu}
+        toggleMenu={toggleMenu}
+      />
+    </>
   );
 };
+
+export default Navbar;

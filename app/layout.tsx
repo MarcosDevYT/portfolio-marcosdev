@@ -2,12 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { ViewTransitions } from "next-view-transitions";
-import { ReactLenis } from "@/lib/lenis";
-
-import MainScrollerTrigger from "@/components/layout/MainScrollerTrigger";
-
 import "./globals.css";
-import { CursorProvider } from "@/hooks/useCursorProvider";
+import ReactLenis from "lenis/react";
+import { CursorProvider } from "@/lib/hooks/useCursorProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -100,9 +97,9 @@ export default function RootLayout({
         <ReactLenis root>
           <CursorProvider>
             <body
-              className={`${inter.variable} ${satoshi.variable} ${satoshiVariable.variable} font-inter antialiased`}
+              className={`${inter.variable} ${satoshi.variable} ${satoshiVariable.variable} font-inter bg-background text-foreground antialiased`}
             >
-              <MainScrollerTrigger>{children}</MainScrollerTrigger>
+              {children}
             </body>
           </CursorProvider>
         </ReactLenis>
