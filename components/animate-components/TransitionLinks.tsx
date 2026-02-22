@@ -4,19 +4,21 @@ import { useTransitionRouter } from "next-view-transitions";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { MouseEvent } from "react";
-import { ContainerReveal } from "./ContainerReveal";
-import { useCursorHover } from "@/hooks/useCursorProvider";
+import { TextReveal } from "./ContainerReveal";
+import { useCursorHover } from "@/lib/hooks/useCursorProvider";
 
 interface TransitionLinksProps {
   href: string;
   className?: string;
-  title: string;
+  title: React.ReactNode;
+  delay?: number;
 }
 
 export const TransitionLinks: React.FC<TransitionLinksProps> = ({
   href,
   className,
   title,
+  delay = 2,
 }) => {
   const { handleActiveMouseEnter, handleActiveMouseLeave } = useCursorHover();
 
@@ -33,7 +35,7 @@ export const TransitionLinks: React.FC<TransitionLinksProps> = ({
         duration: 2000,
         easing: "cubic-bezier(0.9, 0, 0.1, 1)",
         pseudoElement: "::view-transition-new(root)",
-      }
+      },
     );
   }
 
@@ -50,7 +52,7 @@ export const TransitionLinks: React.FC<TransitionLinksProps> = ({
     };
 
   return (
-    <ContainerReveal delay={2}>
+    <TextReveal delay={delay}>
       <Link
         className={className}
         href={href}
@@ -60,6 +62,6 @@ export const TransitionLinks: React.FC<TransitionLinksProps> = ({
       >
         {title}
       </Link>
-    </ContainerReveal>
+    </TextReveal>
   );
 };

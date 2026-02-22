@@ -1,15 +1,17 @@
 "use client";
 
-import { useCursorHover } from "@/hooks/useCursorProvider";
 import { useLenis } from "lenis/react";
-import { ContainerReveal } from "./ContainerReveal";
+import { TextReveal } from "./ContainerReveal";
+import { useCursorHover } from "@/lib/hooks/useCursorProvider";
 
 export function ScrollButton({
+  onClick,
   sectionId,
   className,
   delay,
   title,
 }: {
+  onClick?: () => void;
   sectionId: string;
   className?: string;
   delay: number;
@@ -19,6 +21,10 @@ export function ScrollButton({
   const lenis = useLenis();
 
   const scrollToSection = () => {
+    if (onClick) {
+      onClick();
+    }
+
     const section = document.querySelector<HTMLElement>(sectionId);
     if (section && lenis) {
       lenis.scrollTo(section);
@@ -32,9 +38,9 @@ export function ScrollButton({
       onMouseEnter={handleActiveMouseEnter}
       onMouseLeave={handleActiveMouseLeave}
     >
-      <ContainerReveal delay={delay}>
-        <span className="text-base">{title}</span>
-      </ContainerReveal>
+      <TextReveal delay={delay}>
+        <span>{title}</span>
+      </TextReveal>
     </button>
   );
 }

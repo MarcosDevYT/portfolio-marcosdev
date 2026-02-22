@@ -17,6 +17,32 @@ import {
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { GsapIcon, NextIcon } from "./icons";
 
+// Navbar Items
+export const menuItems = [
+  { text: "Inicio", link: "#" },
+  { text: "Sobre mí", link: "#about" },
+  { text: "Trabajos", link: "#trabajos" },
+  { text: "Servicios", link: "#servicios" },
+  { text: "Contactame", link: "#contact" },
+];
+
+// Footer Items
+export const footerItems = [
+  { text: "Inicio", link: "/" },
+  { text: "Sobre mí", link: "/sobre-mi" },
+  { text: "Trabajos", link: "/trabajos" },
+  { text: "Contactame", link: "#contact" },
+];
+
+// Social Links
+export const socialLinks = [
+  { href: "#", title: "LinkedIn" },
+  { href: "#", title: "GitHub" },
+  { href: "#", title: "Whatsapp" },
+  { href: "#", title: "Instagram" },
+];
+
+// Stack Items
 export const stackItems = [
   {
     id: 0,
@@ -52,6 +78,7 @@ export const stackItems = [
   },
 ];
 
+// Stack Items Mobile
 export const stackItemsMobile = [
   {
     id: 0,

@@ -8,14 +8,14 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-interface ContainerRevealProps {
+interface TextRevealProps {
   children: React.ReactElement | React.ReactNode;
   animateOnScroll?: boolean;
   delay?: number;
   className?: string;
 }
 
-export const ContainerReveal: React.FC<ContainerRevealProps> = ({
+export const TextReveal: React.FC<TextRevealProps> = ({
   children,
   animateOnScroll = true,
   delay = 0,
@@ -122,12 +122,72 @@ export const ContainerReveal: React.FC<ContainerRevealProps> = ({
 
   // Si solo hay un hijo, lo clonamos para pasarle la ref directamente
   if (React.Children.count(children) === 1 && React.isValidElement(children)) {
-    return React.cloneElement(children, { ref: containerRef });
+    return React.cloneElement(
+      children as React.ReactElement<any>,
+      { ref: containerRef } as any,
+    );
   }
 
   // Si hay varios hijos, los envolvemos en un div
   return (
     <div ref={containerRef} data-copy-wrapper="true" className="w-full">
+      {children}
+    </div>
+  );
+};
+
+interface ContainerRevealProps {
+  children: React.ReactNode;
+  animateOnScroll?: boolean;
+  delay?: number;
+  className?: string;
+}
+
+export const ContainerReveal: React.FC<ContainerRevealProps> = ({
+  children,
+  animateOnScroll = true,
+  delay = 0,
+  className = "",
+}) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useGSAP(
+    () => {
+      if (!containerRef.current) return;
+
+      const childrenToAnimate = containerRef.current.children;
+
+      gsap.set(childrenToAnimate, { yPercent: 100 });
+
+      const animationProps = {
+        yPercent: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: "power4.out",
+        delay: delay,
+      };
+
+      if (animateOnScroll) {
+        gsap.to(childrenToAnimate, {
+          ...animationProps,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        });
+      } else {
+        gsap.to(childrenToAnimate, animationProps);
+      }
+    },
+    {
+      scope: containerRef,
+      dependencies: [animateOnScroll, delay],
+    },
+  );
+
+  return (
+    <div ref={containerRef} className={`relative overflow-hidden ${className}`}>
       {children}
     </div>
   );
