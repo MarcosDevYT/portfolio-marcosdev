@@ -14,9 +14,7 @@ export const TitleSection = ({
   return (
     <>
       {secondTitle ? (
-        <h2
-          className={`w-full font-satoshi flex flex-row items-center gap-6 justify-between ${className}`}
-        >
+        <h2 className={`w-full font-satoshi flex flex-row  ${className}`}>
           <TextReveal className={`px-2 ${height}`}>
             <span>{title}</span>
           </TextReveal>
@@ -26,9 +24,7 @@ export const TitleSection = ({
           </TextReveal>
         </h2>
       ) : (
-        <TextReveal
-          className={`w-full font-satoshi text-center px-2 ${height} ${className}`}
-        >
+        <TextReveal className={`w-full font-satoshi ${height} ${className}`}>
           <h2>{title}</h2>
         </TextReveal>
       )}

@@ -193,7 +193,7 @@ export const ContactFooter = () => {
       </form>
 
       <div className="w-full flex justify-center pt-32">
-        <p className="text-2xl font-satoshi italic">
+        <p className="text-lg md:text-xl lg:text-2xl font-satoshi italic">
           Hecho por Marcos Morua 2026
         </p>
       </div>

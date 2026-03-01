@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed z-10 mix-blend-difference text-white top-0 left-0 w-full">
+      <header className="fixed z-20 backdrop-blur-md text-white top-0 left-0 w-full">
         <nav className="font-satoshi-variable relative px-4 md:px-8 lg:px-12 2xl:px-16 flex justify-between items-center w-full h-16 md:h-20 py-3 md:py-4 transition-all">
           <MenuToggle button={toggleMenu} icon={<Menu size={36} />} />
 

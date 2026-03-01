@@ -19,10 +19,9 @@ import { GsapIcon, NextIcon } from "./icons";
 
 // Navbar Items
 export const menuItems = [
-  { text: "Inicio", link: "#" },
-  { text: "Sobre mí", link: "#about" },
-  { text: "Trabajos", link: "#trabajos" },
-  { text: "Servicios", link: "#servicios" },
+  { text: "Inicio", link: "/" },
+  { text: "Sobre mí", link: "/sobre-mi" },
+  { text: "Trabajos", link: "/trabajos" },
   { text: "Contactame", link: "#contact" },
 ];
 

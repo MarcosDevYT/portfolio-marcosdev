@@ -1,85 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import localFont from "next/font/local";
 import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 import ReactLenis from "lenis/react";
 import { CursorProvider } from "@/lib/hooks/useCursorProvider";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const satoshi = localFont({
-  src: [
-    {
-      path: "../public/fonts/Satoshi-Light.ttf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Satoshi-LightItalic.ttf",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/Satoshi-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Satoshi-Italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/Satoshi-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Satoshi-MediumItalic.ttf",
-      weight: "500",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/Satoshi-Bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Satoshi-BoldItalic.ttf",
-      weight: "700",
-      style: "italic",
-    },
-    {
-      path: "../public/fonts/Satoshi-Black.ttf",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Satoshi-BlackItalic.ttf",
-      weight: "900",
-      style: "italic",
-    },
-  ],
-  variable: "--font-satoshi",
-});
-
-const satoshiVariable = localFont({
-  src: [
-    {
-      path: "../public/fonts/Satoshi-Variable.ttf",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Satoshi-VariableItalic.ttf",
-      style: "italic",
-    },
-  ],
-  variable: "--font-satoshi-variable",
-});
+import { inter, satoshi, satoshiVariable } from "@/lib/fonts";
+import { PageRevealer } from "@/components/animate-components/PageRevealer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -99,7 +24,9 @@ export default function RootLayout({
             <body
               className={`${inter.variable} ${satoshi.variable} ${satoshiVariable.variable} font-inter bg-background text-foreground antialiased`}
             >
-              {children}
+              <PageRevealer />
+
+              <div>{children}</div>
             </body>
           </CursorProvider>
         </ReactLenis>

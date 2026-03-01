@@ -5,10 +5,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { X } from "lucide-react";
-import { menuItems } from "@/lib/constans/const";
+import { menuItems, socialLinks } from "@/lib/constans/const";
 import MenuToggle from "../MenuToggle";
 import LinksAnimation from "../animate-components/LinksAnimation";
 import { ScrollButton } from "../animate-components/ScrollButton";
+import RevealText from "../animate-components/RevealText";
 
 const NavMenu = ({
   openMenu,
@@ -47,7 +48,7 @@ const NavMenu = ({
 
   return (
     <div
-      className={`fixed z-10 ${
+      className={`fixed z-20 ${
         showContainer ? "top-0" : "top-[-150%]"
       } left-0 h-screen w-full bg-neutral-950 transition-all duration-800 ease-[cubic-bezier(0.76, 0, 0.24, 1)]`}
     >
@@ -58,6 +59,7 @@ const NavMenu = ({
           <Link
             onMouseEnter={handleActiveMouseEnter}
             onMouseLeave={handleActiveMouseLeave}
+            onClick={handleClose}
             className="absolute top-1/2 left-1/2 -translate-1/2"
             href={"/"}
           >
@@ -84,20 +86,54 @@ const NavMenu = ({
           </div>
         </div>
       </nav>
-      <ul className="pt-12 px-6 md:px-8 lg:px-12 2xl:px-16 flex flex-col gap-4">
-        {menuItems.map((item, index) => (
-          <LinksAnimation
-            link={item.link}
-            key={index}
-            open={showLinks}
-            text={item.text}
-            delay={index * 100}
-            onClick={handleClose}
-            handleActiveMouseEnter={handleActiveMouseEnter}
-            handleActiveMouseLeave={handleActiveMouseLeave}
-          />
-        ))}
-      </ul>
+
+      <div className="pt-6 px-6 md:px-8 lg:px-12 2xl:px-16 flex flex-col gap-10 lg:flex-row lg:items-end">
+        <ul className="flex-1 w-full flex flex-col gap-1 xl:gap-2">
+          {menuItems.map((item, index) => (
+            <LinksAnimation
+              link={item.link}
+              key={index}
+              open={showLinks}
+              text={item.text}
+              delay={index * 100}
+              onClick={handleClose}
+              className={
+                "uppercase font-light tracking-tighter text-6xl h-16 lg:text-8xl xl:text-[6.5rem] leading-none lg:h-26"
+              }
+              handleActiveMouseEnter={handleActiveMouseEnter}
+              handleActiveMouseLeave={handleActiveMouseLeave}
+            />
+          ))}
+        </ul>
+
+        <ul className="w-46 lg:w-80 flex flex-col gap-2 lg:pb-3 xl:pb-2">
+          <h2 className="mb-2 text-4xl h-11 lg:text-6xl lg:h-17 uppercase leading-none font-satoshi font-light overflow-hidden relative ">
+            <span
+              className={`w-max cursor-pointer border-b-4 border-white pb-1 absolute transition-all ease-[cubic-bezier(0.76,0,0.24,1)] duration-900 ${
+                showLinks ? "translate-y-0" : "translate-y-[130px]"
+              }`}
+            >
+              Mis Redes
+            </span>
+          </h2>
+
+          {socialLinks.map((item, index) => (
+            <LinksAnimation
+              key={index}
+              link={item.href}
+              open={showLinks}
+              text={item.title}
+              onClick={handleClose}
+              delay={index * 100}
+              className={
+                "font-light tracking-tighter text-3xl h-9 lg:text-5xl lg:h-13 leading-none"
+              }
+              handleActiveMouseEnter={handleActiveMouseEnter}
+              handleActiveMouseLeave={handleActiveMouseLeave}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

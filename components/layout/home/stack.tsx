@@ -4,8 +4,7 @@ import { stackItems, stackItemsMobile } from "@/lib/constans/const";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { useEffect, useRef, MouseEvent } from "react";
 import { useCursorHover } from "@/lib/hooks/useCursorProvider";
-import Container from "../layout/Container";
-import { TitleSection } from "../animate-components/TitleSection";
+import Container from "@/components/layout/Container";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -53,8 +52,8 @@ export const StackSection = () => {
           ease: "none",
           scrollTrigger: {
             trigger: titleContainerRef.current,
-            start: "top 95%",
-            end: "bottom 40%",
+            start: "top 100%",
+            end: "bottom 80%",
             scrub: 1,
           },
         });
@@ -117,12 +116,12 @@ export const StackSection = () => {
   }, [isMobile]);
 
   return (
-    <Container className="flex-col">
+    <Container className="flex-col pt-0">
       <div
         ref={titleContainerRef}
-        className="w-full flex flex-col items-center justify-center mb-12 md:mb-0"
+        className="w-full flex flex-col items-center justify-center mb-12 md:mb-0 py-12"
       >
-        <h2 className="uppercase w-full font-satoshi text-center px-2 text-[17vw] sm:text-9xl md:text-[9rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[16rem] font-black leading-none cursor-default">
+        <h2 className="uppercase w-full font-satoshi text-center px-2 text-[17vw] sm:text-9xl md:text-[9rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[15.5rem] font-black leading-none cursor-default">
           Stack Moderno
         </h2>
       </div>
