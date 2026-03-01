@@ -3,6 +3,13 @@ import { TextReveal } from "@/components/animate-components/ContainerReveal";
 import { WorkCard } from "@/components/WorkCard";
 import { ListaDeTrabajos } from "@/lib/constans/works";
 import Container from "@/components/layout/Container";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Trabajos Seleccionados",
+  description:
+    "Explora mis proyectos destacados: desde plataformas SaaS con IA y aplicaciones móviles hasta sistemas de seguros y e-commerce headless.",
+};
 
 export default function TrabajosPage() {
   return (
