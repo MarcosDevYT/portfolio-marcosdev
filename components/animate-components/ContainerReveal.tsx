@@ -122,10 +122,9 @@ export const TextReveal: React.FC<TextRevealProps> = ({
 
   // Si solo hay un hijo, lo clonamos para pasarle la ref directamente
   if (React.Children.count(children) === 1 && React.isValidElement(children)) {
-    return React.cloneElement(
-      children as React.ReactElement<any>,
-      { ref: containerRef } as any,
-    );
+    return React.cloneElement(children as React.ReactElement, {
+      ref: containerRef,
+    });
   }
 
   // Si hay varios hijos, los envolvemos en un div
@@ -167,18 +166,30 @@ export const ContainerReveal: React.FC<ContainerRevealProps> = ({
         delay: delay,
       };
 
-      if (animateOnScroll) {
-        gsap.to(childrenToAnimate, {
-          ...animationProps,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 85%",
-            once: true,
-          },
-        });
-      } else {
-        gsap.to(childrenToAnimate, animationProps);
-      }
+      let scrollTriggerInstance: ScrollTrigger | null = null;
+
+      const timeoutId = setTimeout(() => {
+        if (animateOnScroll) {
+          const tween = gsap.to(childrenToAnimate, {
+            ...animationProps,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          });
+          scrollTriggerInstance = tween.scrollTrigger || null;
+        } else {
+          gsap.to(childrenToAnimate, animationProps);
+        }
+      }, 150);
+
+      return () => {
+        clearTimeout(timeoutId);
+        if (scrollTriggerInstance) {
+          scrollTriggerInstance.kill();
+        }
+      };
     },
     {
       scope: containerRef,

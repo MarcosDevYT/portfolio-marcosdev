@@ -12,15 +12,28 @@ interface TransitionLinksProps {
   className?: string;
   title: React.ReactNode;
   delay?: number;
+  isImageReveal?: boolean;
+  isWithTextReveal?: boolean;
+  ref?: React.RefObject<HTMLAnchorElement> | null;
+  children?: React.ReactNode;
 }
 
 export const TransitionLinks: React.FC<TransitionLinksProps> = ({
   href,
   className,
+  isImageReveal,
+  isWithTextReveal,
+  children,
   title,
   delay = 2,
+  ref,
 }) => {
-  const { handleActiveMouseEnter, handleActiveMouseLeave } = useCursorHover();
+  const {
+    handleActiveMouseEnter,
+    handleLinkMouseEnter,
+    handleLinkMouseLeave,
+    handleActiveMouseLeave,
+  } = useCursorHover();
 
   const router = useTransitionRouter();
   const pathname = usePathname();
@@ -51,17 +64,45 @@ export const TransitionLinks: React.FC<TransitionLinksProps> = ({
       });
     };
 
-  return (
-    <TextReveal delay={delay}>
+  if (isImageReveal) {
+    return (
       <Link
+        ref={ref}
         className={className}
         href={href}
         onClick={handleNavigation(href)}
-        onMouseEnter={handleActiveMouseEnter}
-        onMouseLeave={handleActiveMouseLeave}
+        onMouseEnter={handleLinkMouseEnter}
+        onMouseLeave={handleLinkMouseLeave}
       >
-        {title}
+        {children}
       </Link>
-    </TextReveal>
+    );
+  }
+
+  if (isWithTextReveal)
+    return (
+      <TextReveal delay={delay}>
+        <Link
+          className={className}
+          href={href}
+          onClick={handleNavigation(href)}
+          onMouseEnter={handleActiveMouseEnter}
+          onMouseLeave={handleActiveMouseLeave}
+        >
+          {title}
+        </Link>
+      </TextReveal>
+    );
+
+  return (
+    <Link
+      className={className}
+      href={href}
+      onClick={handleNavigation(href)}
+      onMouseEnter={handleActiveMouseEnter}
+      onMouseLeave={handleActiveMouseLeave}
+    >
+      {title}
+    </Link>
   );
 };

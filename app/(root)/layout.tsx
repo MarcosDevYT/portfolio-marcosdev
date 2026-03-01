@@ -1,6 +1,6 @@
 import Cursor from "@/components/cursor/Cursor";
-import { ContactFooter } from "@/components/layout/ContactFooter";
 import Navbar from "@/components/layout/Navbar";
+import { ContactFooter } from "@/components/layout/ContactFooter";
 
 export default function RootLayout({
   children,

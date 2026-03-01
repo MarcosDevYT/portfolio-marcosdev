@@ -1,20 +1,17 @@
-import { StackSection } from "@/components/home/stack";
-import { HeroSection } from "@/components/home/hero";
-import { WorkSection } from "@/components/home/work";
-import { ServiceSection } from "@/components/home/services";
-import { MissionSection } from "@/components/home/mission";
-import { AboutSection } from "@/components/home/about";
-import { PageRevealer } from "@/components/animate-components/PageRevealer";
+import { AboutSection } from "@/components/layout/home/about";
+import { HeroSection } from "@/components/layout/home/hero";
+import { MissionSection } from "@/components/layout/home/mission";
+import { ServiceSection } from "@/components/layout/home/services";
+import { StackSection } from "@/components/layout/home/stack";
+import { WorkSection } from "@/components/layout/home/work";
 
 export const dynamic = "force-static";
 
 export default function Home() {
   return (
     <>
-      <PageRevealer />
-
       <HeroSection />
-      <MissionSection />
+      <MissionSection text="TRANSFORMANDO LO ESENCIAL EN EXPERIENCIAS DIGITALES ELEGANTES. MENOS RUIDO, MAYOR IMPACTO." />
       <AboutSection />
       <WorkSection />
       <ServiceSection />

@@ -1,15 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import Container from "../layout/Container";
-import {
-  TextReveal,
-  ContainerReveal,
-} from "../animate-components/ContainerReveal";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
+import { ListaDeTrabajos } from "@/lib/constans/works";
+import Container from "@/components/layout/Container";
+import {
+  TextReveal,
+  ContainerReveal,
+} from "@/components/animate-components/ContainerReveal";
+import { SliderReveal } from "@/components/animate-components/SliderReveal";
 
 export const HeroSection = () => {
   const figureRef = useRef<HTMLElement>(null);
@@ -36,7 +38,7 @@ export const HeroSection = () => {
     <Container className="h-screen md:h-[120vh] pt-20 md:pt-28 overflow-clip">
       <article className="pb-28 md:pb-10 xl:pb-24 2xl:pb-28 h-full flex flex-col justify-between w-full">
         <div className="flex justify-between md:hidden">
-          <Link href={"#works"}>
+          <Link href={"/trabajos"}>
             <TextReveal delay={2}>
               <h2 className="h-12 text-3xl italic font-satoshi">Trabajos</h2>
             </TextReveal>
@@ -51,29 +53,30 @@ export const HeroSection = () => {
         </div>
 
         <div className="hidden md:flex flex-col items-start">
-          <TextReveal delay={2}>
-            <h2 className="h-12 text-3xl md:text-4xl italic font-satoshi">
-              Trabajos
-            </h2>
-          </TextReveal>
+          <Link href="/trabajos" className="group">
+            <TextReveal delay={2}>
+              <h2 className="text-start h-12 text-3xl md:text-4xl italic font-satoshi group-hover:text-indigo-400 transition-colors">
+                Trabajos
+              </h2>
+            </TextReveal>
 
-          <ContainerReveal delay={2}>
-            <div className="relative aspect-video w-60 h-32 md:w-80 md:h-44 rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-black/30 z-1 hover:bg-black/0 transition-colors duration-300" />
-
-              <Image
-                src={"/works/shoecommerce-mockup.png"}
-                alt=""
-                fill
-                className="object-cover"
-              />
-            </div>
-          </ContainerReveal>
+            <ContainerReveal delay={2}>
+              <div className="relative mt-2">
+                <SliderReveal
+                  images={ListaDeTrabajos.map((t) => t.mainImage)}
+                  intervalDelay={3000}
+                  className="aspect-video w-60 h-32 md:w-80 md:h-44 rounded-2xl"
+                  width={400}
+                  height={300}
+                />
+                <div className="absolute inset-0 bg-black/30 z-10 group-hover:bg-black/0 transition-colors duration-300 pointer-events-none rounded-2xl" />
+              </div>
+            </ContainerReveal>
+          </Link>
         </div>
 
         <TextReveal delay={2}>
-          <h1 className="font-satoshi flex flex-col items-center text-center md:items-start md:text-start text-[6vh] leading-none xl:text-[100px] xl:leading-[80px] 2xl:text-[140px] 2xl:leading-[120px]">
-            <span>MARCOS</span>
+          <h1 className="font-satoshi flex flex-col items-center text-center md:items-start md:text-start text-[6vh] lg:text-[10vh] xl:text-[13vh] 2xl:text-[15vh] xl:leading-none">
             <span>PROGRAMADOR</span>
             <span>FULL STACK</span>
           </h1>

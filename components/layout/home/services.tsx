@@ -1,11 +1,11 @@
-import Container from "../layout/Container";
-import { TextReveal } from "../animate-components/ContainerReveal";
+import Container from "@/components/layout/Container";
+import { TextReveal } from "@/components/animate-components/ContainerReveal";
 import { servicios } from "@/lib/constans/data";
-import { ServiceCard } from "../ServiceCard";
+import { ServiceCard } from "@/components/ServiceCard";
 
 export const ServiceSection = () => {
   return (
-    <Container className="flex-col gap-16">
+    <Container className="flex-col gap-16 pb-0">
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 w-full">
         <TextReveal>
           <h2 className="md:text-start text-5xl lg:text-6xl xl:text-8xl font-medium grid">

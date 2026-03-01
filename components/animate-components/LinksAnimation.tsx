@@ -8,17 +8,19 @@ const LinksAnimation = ({
   link,
   handleActiveMouseEnter,
   handleActiveMouseLeave,
+  className,
 }: {
   open: boolean;
   text: string;
   delay: number;
-  onClick: () => void;
+  onClick?: () => void;
   link: string;
   handleActiveMouseEnter: () => void;
   handleActiveMouseLeave: () => void;
+  className?: string;
 }) => {
   return (
-    <li className="font-satoshi uppercase font-light tracking-tighter text-6xl h-16 md:text-8xl xl:text-[7rem] md:h-27 xl:h-30 overflow-hidden relative">
+    <li className={`font-satoshi overflow-hidden relative ${className}`}>
       <span
         onClick={onClick}
         onMouseEnter={handleActiveMouseEnter}
