@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Conoce a Marcos Morua, Desarrollador Full Stack con formación técnica y académica. Especializado en el ecosistema JavaScript moderno, arquitectura limpia y soluciones escalables.",
 };
 
+export const dynamic = "force-static";
+
 export default function SobreMiPage() {
   return (
     <>

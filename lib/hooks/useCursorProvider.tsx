@@ -1,10 +1,12 @@
 "use client";
+import { usePathname } from "next/navigation";
 import {
   createContext,
   useContext,
   useState,
   useCallback,
   ReactNode,
+  useEffect,
 } from "react";
 
 type CursorContextType = {
@@ -22,6 +24,8 @@ type CursorContextType = {
 const CursorContext = createContext<CursorContextType | undefined>(undefined);
 
 export function CursorProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+
   const [isDesapear, setIsDesapear] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isLink, setIsLink] = useState(false);
@@ -32,6 +36,15 @@ export function CursorProvider({ children }: { children: ReactNode }) {
   const handleLinkMouseLeave = useCallback(() => setIsLink(false), []);
   const handleDesapearMouseEnter = useCallback(() => setIsDesapear(true), []);
   const handleDesapearMouseLeave = useCallback(() => setIsDesapear(false), []);
+
+  // Desactiva los estados activos al cambiar de ruta
+  useEffect(() => {
+    if (isDesapear || isActive || isLink) {
+      setIsDesapear(false);
+      setIsActive(false);
+      setIsLink(false);
+    }
+  }, [pathname]);
 
   return (
     <CursorContext.Provider

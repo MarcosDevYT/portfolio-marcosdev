@@ -1,3 +1,5 @@
+"use client";
+
 import Container from "@/components/layout/Container";
 import {
   ContainerReveal,
@@ -7,6 +9,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { ImageGallery } from "./ImageGallery";
+import { useCursorHover } from "@/lib/hooks/useCursorProvider";
 
 interface WorkPageProps {
   id: number;
@@ -22,6 +25,8 @@ interface WorkPageProps {
 }
 
 export const WorkPage = ({ trabajo }: { trabajo: WorkPageProps }) => {
+  const { handleActiveMouseEnter, handleActiveMouseLeave } = useCursorHover();
+
   return (
     <Container className="container mx-auto flex-col items-start justify-start w-full">
       {/* Hero Section */}
@@ -49,6 +54,8 @@ export const WorkPage = ({ trabajo }: { trabajo: WorkPageProps }) => {
 
           <ContainerReveal delay={2.1}>
             <Link
+              onMouseEnter={handleActiveMouseEnter}
+              onMouseLeave={handleActiveMouseLeave}
               href={trabajo.link}
               target="_blank"
               rel="noopener noreferrer"

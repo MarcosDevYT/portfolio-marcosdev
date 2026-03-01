@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     "Explora mis proyectos destacados: desde plataformas SaaS con IA y aplicaciones móviles hasta sistemas de seguros y e-commerce headless.",
 };
 
+export const dynamic = "force-static";
+
 export default function TrabajosPage() {
   return (
     <>

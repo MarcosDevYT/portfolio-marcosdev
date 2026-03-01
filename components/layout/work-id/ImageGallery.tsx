@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useCursorHover } from "@/lib/hooks/useCursorProvider";
 
 interface ImageGalleryProps {
   title: string;
@@ -11,6 +12,7 @@ interface ImageGalleryProps {
 
 export const ImageGallery = ({ title, images }: ImageGalleryProps) => {
   const [activeImage, setActiveImage] = useState(images[0]);
+  const { handleActiveMouseEnter, handleActiveMouseLeave } = useCursorHover();
 
   return (
     <div className="w-full flex flex-col gap-4 my-8">
@@ -31,6 +33,8 @@ export const ImageGallery = ({ title, images }: ImageGalleryProps) => {
         <div className="w-full flex gap-3 overflow-x-auto pb-4 snap-x no-scrollbar">
           {images.map((img, index) => (
             <button
+              onMouseEnter={handleActiveMouseEnter}
+              onMouseLeave={handleActiveMouseLeave}
               key={index}
               onClick={() => setActiveImage(img)}
               className={cn(
