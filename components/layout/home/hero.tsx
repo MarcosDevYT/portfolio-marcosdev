@@ -28,7 +28,7 @@ export const HeroSection = () => {
         clipPath: "inset(0% 0 0 0)",
         duration: 2,
         ease: "expo.inOut",
-        delay: 1.2,
+        delay: 2.2,
       });
     },
     { scope: figureRef },
@@ -39,12 +39,12 @@ export const HeroSection = () => {
       <article className="pb-28 md:pb-10 xl:pb-24 2xl:pb-28 h-full flex flex-col justify-between w-full">
         <div className="flex justify-between md:hidden">
           <Link href={"/trabajos"}>
-            <TextReveal delay={2}>
+            <TextReveal delay={3.1}>
               <h2 className="h-12 text-3xl italic font-satoshi">Trabajos</h2>
             </TextReveal>
           </Link>
 
-          <TextReveal delay={2.1}>
+          <TextReveal delay={3.1}>
             <h2 className="uppercase font-satoshi flex flex-col items-center text-center justify-center text-xl leading-6">
               Trabajando
               <span className="text-gray">Desde 2024</span>
@@ -54,13 +54,13 @@ export const HeroSection = () => {
 
         <div className="hidden md:flex flex-col items-start">
           <Link href="/trabajos" className="group">
-            <TextReveal delay={2}>
+            <TextReveal delay={3.1}>
               <h2 className="text-start h-12 text-3xl md:text-4xl italic font-satoshi group-hover:text-indigo-400 transition-colors">
                 Trabajos
               </h2>
             </TextReveal>
 
-            <ContainerReveal delay={2}>
+            <ContainerReveal delay={3.1}>
               <div className="relative mt-2">
                 <SliderReveal
                   images={ListaDeTrabajos.map((t) => t.mainImage)}
@@ -75,7 +75,7 @@ export const HeroSection = () => {
           </Link>
         </div>
 
-        <TextReveal delay={2}>
+        <TextReveal delay={2.9}>
           <h1 className="font-satoshi flex flex-col items-center text-center md:items-start md:text-start text-[6vh] lg:text-[10vh] xl:text-[13vh] 2xl:text-[15vh] xl:leading-none">
             <span>PROGRAMADOR</span>
             <span>FULL STACK</span>
