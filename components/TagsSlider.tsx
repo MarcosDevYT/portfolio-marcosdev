@@ -44,7 +44,7 @@ export default function TagsSlider({ tags }: { tags: string[] }) {
       >
         {[...tags, ...tags, ...tags, ...tags].map((tag, index) => (
           <div key={index} className="flex items-center">
-            <span className="text-nowrap flex items-center justify-center py-1 px-4 rounded-full border-2 border-gray-500 group-hover:border-violet-400 text-gray-500 group-hover:text-violet-400 transition-colors text-base">
+            <span className="text-nowrap flex items-center justify-center py-1 px-2 md:px-4 rounded-full border-2 border-gray-500 group-hover:border-violet-400 text-gray-500 group-hover:text-violet-400 transition-colors text-sm md:text-base">
               {tag}
             </span>
           </div>

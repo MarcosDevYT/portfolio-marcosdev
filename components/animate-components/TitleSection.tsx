@@ -15,11 +15,11 @@ export const TitleSection = ({
     <>
       {secondTitle ? (
         <h2 className={`w-full font-satoshi flex flex-row  ${className}`}>
-          <TextReveal className={`px-2 ${height}`}>
+          <TextReveal className={`px-px sm:px-2 ${height}`}>
             <span>{title}</span>
           </TextReveal>
 
-          <TextReveal className={`px-2 ${height}`}>
+          <TextReveal className={`px-px sm:px-2 ${height}`}>
             <span>{secondTitle}</span>
           </TextReveal>
         </h2>

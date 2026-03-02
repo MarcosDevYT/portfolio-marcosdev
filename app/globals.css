@@ -242,7 +242,7 @@ html.lenis body {
 }
 
 .mobile.grid-stack .grid-item {
-  @apply h-full col-span-2;
+  @apply h-full col-span-1;
 }
 
 /*
@@ -279,15 +279,29 @@ html.lenis body {
   height: 500px;
 }
 
+.work-card-grid {
+  @apply w-72 sm:w-full;
+}
+
 /*
 
   Media queries
 
 */
 
+@media (min-width: 360px) {
+  .work-card-grid {
+    @apply w-80;
+  }
+}
+
 @media (min-width: 460px) {
   .mobile.grid-stack .grid-item {
     @apply h-full col-span-1;
+  }
+
+  .work-card-grid {
+    @apply w-full;
   }
 }
 

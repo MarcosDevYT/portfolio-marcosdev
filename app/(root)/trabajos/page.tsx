@@ -17,22 +17,22 @@ export default function TrabajosPage() {
   return (
     <>
       <div
-        className="min-h-screen w-full flex flex-col items-center justify-start pt-20"
+        className="min-h-screen w-full flex flex-col items-center justify-start pt-0 md:pt-20"
         data-bgcolor="#ffffff"
         data-textcolor="#070707"
       >
         <Container className="px-4 md:px-4 lg:px-4 xl:px-4 2xl:px-4 flex-col items-start justify-start">
           <TextReveal delay={2.1}>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl uppercase font-black h-10 md:h-12 lg:h-16 2xl:h-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl uppercase font-black">
               Trabajos Seleccionados
             </h2>
           </TextReveal>
 
-          <article className="p-4 bg-zinc-900 rounded-3xl w-full grid grid-cols-1 md:grid-cols-2 mt-4 gap-4">
+          <article className="p-0 md:p-4 md:bg-zinc-900 rounded-3xl w-full grid grid-cols-1 md:grid-cols-2 mt-4 gap-4">
             {ListaDeTrabajos.map((trabajo, index) => (
               <div
                 key={index}
-                className="w-full bg-zinc-950 rounded-3xl p-5 h-[600px] md:h-[650px] flex flex-col"
+                className="w-full bg-zinc-950 rounded-3xl p-3 pb-5 md:p-5 h-[600px] md:h-[650px] flex flex-col"
               >
                 <WorkCard
                   id={trabajo.id}

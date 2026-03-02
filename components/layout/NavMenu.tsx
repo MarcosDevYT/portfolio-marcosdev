@@ -53,14 +53,14 @@ const NavMenu = ({
       } left-0 h-screen w-full bg-neutral-950 transition-all duration-800 ease-[cubic-bezier(0.76, 0, 0.24, 1)]`}
     >
       <nav className="w-full shadow-md">
-        <div className="font-satoshi-variable relative px-6 md:px-8 lg:px-12 2xl:px-16 flex justify-between items-center w-full h-20 py-4">
+        <div className="font-satoshi-variable relative px-4 md:px-8 lg:px-12 2xl:px-16 flex justify-between items-center w-full h-20 py-4">
           <MenuToggle button={handleClose} icon={<X size={36} />} />
 
           <Link
             onMouseEnter={handleActiveMouseEnter}
             onMouseLeave={handleActiveMouseLeave}
             onClick={handleClose}
-            className="absolute top-1/2 left-1/2 -translate-1/2"
+            className="sm:absolute top-1/2 left-1/2 sm:-translate-1/2"
             href={"/"}
           >
             <h2 className="font-medium text-xl md:text-3xl flex flex-col items-center justify-center leading-none">
@@ -78,7 +78,7 @@ const NavMenu = ({
             </div>
 
             <ScrollButton
-              className="cursor-pointer h-full text-lg md:text-xl font-medium bg-foreground text-background px-5 md:px-8 flex flex-col items-center justify-center"
+              className="cursor-pointer h-full text-lg md:text-xl font-medium bg-foreground text-background px-3 sm:px-5 md:px-8 flex flex-col items-center justify-center"
               sectionId="#contact"
               delay={2.1}
               title="Hablemos"
@@ -98,7 +98,7 @@ const NavMenu = ({
               delay={index * 100}
               onClick={handleClose}
               className={
-                "uppercase font-light tracking-tighter text-6xl h-16 lg:text-8xl xl:text-[6.5rem] leading-none lg:h-26"
+                "uppercase font-light tracking-tighter text-4xl h-11 sm:text-6xl sm:h-16 lg:text-8xl xl:text-[6.5rem] leading-none lg:h-26"
               }
               handleActiveMouseEnter={handleActiveMouseEnter}
               handleActiveMouseLeave={handleActiveMouseLeave}

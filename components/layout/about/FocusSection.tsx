@@ -5,7 +5,7 @@ import { ContainerReveal } from "@/components/animate-components/ContainerReveal
 
 export const FocusSection = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <div className="px-4 w-full flex flex-col items-center justify-center">
       <ContainerReveal className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-6xl z-10 mt-8 lg:mt-12 text-left">
         {focusCards.map((item, i) => (
           <div
