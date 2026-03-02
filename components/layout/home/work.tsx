@@ -12,18 +12,18 @@ export const WorkSection = () => {
   return (
     <Container className="flex-col pb-12">
       <TitleSection
-        className="text-5xl lg:text-7xl italic items-center gap-6 justify-between text-center"
-        height="h-20"
+        className="text-4xl sm:text-5xl lg:text-7xl italic items-center gap-6 justify-between text-center"
+        height="h-10 sm:h-16 lg:h-20"
         title="Trabajos"
         secondTitle="'25"
       />
 
-      <article className="w-full grid grid-cols-12 py-12 md:py-24 gap-8 gap-y-12 md:gap-16">
-        <div className="col-span-12 h-100 sm:h-112.5 md:h-162.5 lg:h-175 2xl:h-200">
+      <article className="w-full grid grid-cols-12 pt-4 pb-12 md:pb-24 gap-8 gap-y-12 md:gap-16">
+        <div className="work-card-grid col-span-12 h-100 sm:h-112.5 md:h-162.5 lg:h-175 2xl:h-200">
           <WorkCard {...SelectedWorks[0]} />
         </div>
 
-        <div className="col-span-12 md:col-span-6 xl:col-span-5 h-full flex flex-col gap-8 gap-y-12 md:gap-16">
+        <div className="work-card-grid col-span-12 md:col-span-6 xl:col-span-5 h-full flex flex-col gap-8 gap-y-12 md:gap-16">
           <div className="h-100 sm:h-112.5 xl:h-137.5">
             <WorkCard {...SelectedWorks[1]} />
           </div>
@@ -33,7 +33,7 @@ export const WorkSection = () => {
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-6 xl:col-span-7 md:pt-28 h-100 sm:h-112.5 md:h-162.5 xl:h-225">
+        <div className="work-card-grid col-span-12 md:col-span-6 xl:col-span-7 md:pt-28 h-100 sm:h-112.5 md:h-162.5 xl:h-225">
           <WorkCard {...SelectedWorks[2]} />
         </div>
       </article>

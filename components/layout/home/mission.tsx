@@ -14,7 +14,7 @@ export const MissionSection = ({
       <Copy
         text={text}
         blockColor={blockColor}
-        className="uppercase font-medium leading-none tracking-[-0.1rem] text-[3rem] text-center w-full lg:text-[5rem] lg:w-[80%] 2xl:text-[6rem] 2xl:w-[88%]"
+        className="uppercase font-medium leading-none tracking-[-0.1rem] text-[9.5vw] text-center w-full lg:text-[5rem] lg:w-[80%] 2xl:text-[6rem] 2xl:w-[88%]"
       />
     </section>
   );

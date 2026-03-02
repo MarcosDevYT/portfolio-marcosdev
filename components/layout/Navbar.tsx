@@ -32,7 +32,7 @@ const Navbar = () => {
           <div
             onMouseEnter={handleActiveMouseEnter}
             onMouseLeave={handleActiveMouseLeave}
-            className="absolute top-1/2 left-1/2 -translate-1/2"
+            className="sm:absolute top-1/2 left-1/2 sm:-translate-1/2"
           >
             <TransitionLinks
               className="font-medium text-xl md:text-3xl flex flex-col items-center justify-center leading-none"
@@ -59,7 +59,7 @@ const Navbar = () => {
             </div>
 
             <ScrollButton
-              className="cursor-pointer h-full text-lg md:text-xl font-medium bg-foreground text-background px-5 md:px-8 flex flex-col items-center justify-center"
+              className="cursor-pointer h-full text-lg md:text-xl font-medium bg-foreground text-background px-3 md:px-8 flex flex-col items-center justify-center"
               sectionId="#contact"
               delay={3.2}
               title="Hablemos"

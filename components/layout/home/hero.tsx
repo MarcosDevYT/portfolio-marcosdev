@@ -76,7 +76,7 @@ export const HeroSection = () => {
         </div>
 
         <TextReveal delay={2.9}>
-          <h1 className="font-satoshi flex flex-col items-center text-center md:items-start md:text-start text-[6vh] lg:text-[10vh] xl:text-[13vh] 2xl:text-[15vh] xl:leading-none">
+          <h1 className="font-satoshi flex flex-col items-center text-center md:items-start md:text-start text-[11vw] lg:text-[10vh] xl:text-[13vh] 2xl:text-[15vh] xl:leading-none">
             <span>PROGRAMADOR</span>
             <span>FULL STACK</span>
           </h1>

@@ -49,11 +49,11 @@ export const WorkCard = ({
   }, []);
 
   return (
-    <article className="h-full w-full flex flex-col items-center justify-center overflow-clip gap-3 md:gap-4">
+    <article className=" h-full w-full flex flex-col items-center justify-center overflow-clip gap-3 md:gap-4">
       <TransitionLinks
         href={`/trabajos/${id}`}
         ref={containerRef}
-        className="block flex-1 relative w-full h-full rounded-2xl overflow-hidden cursor-none"
+        className="block flex-1 relative w-full h-full rounded-2xl overflow-hidden md:cursor-none"
         isImageReveal
       >
         <Image
@@ -73,7 +73,7 @@ export const WorkCard = ({
             delay={0}
             href={`/trabajos/${id}`}
             title={title}
-            className="text-2xl md:text-3xl font-medium truncate hover:text-violet-400 transition-colors"
+            className="text-2xl md:text-3xl font-medium hover:text-violet-400 transition-colors"
           />
 
           <p className=" mt-1 text-sm md:text-base text-gray-500 line-clamp-2">

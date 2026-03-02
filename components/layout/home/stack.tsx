@@ -121,7 +121,7 @@ export const StackSection = () => {
         ref={titleContainerRef}
         className="w-full flex flex-col items-center justify-center mb-12 md:mb-0 py-12"
       >
-        <h2 className="uppercase w-full font-satoshi text-center px-2 text-[17vw] sm:text-9xl md:text-[9rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[15.5rem] font-black leading-none cursor-default">
+        <h2 className="uppercase w-full font-satoshi text-center px-2 text-[16vw] sm:text-9xl md:text-[9rem] lg:text-[12rem] xl:text-[14rem] 2xl:text-[15.5rem] font-black leading-none cursor-default">
           Stack Moderno
         </h2>
       </div>
@@ -148,7 +148,7 @@ export const StackSection = () => {
                       key={item.title}
                     >
                       <Icon
-                        size={56}
+                        size={40}
                         className={`relative mix-blend-difference z-2 transition-all duration-200 stroke-white ${
                           item.personalizado && "w-20 h-14 fill-white"
                         } ${item.next && "w-28 h-14"} ${

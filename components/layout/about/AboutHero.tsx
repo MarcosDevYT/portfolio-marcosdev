@@ -63,7 +63,7 @@ export const AboutHero = () => {
                 <h1 className="text-[16vw] md:text-[14vw] leading-[0.8] font-medium tracking-tighter uppercase font-satoshi text-white italic relative">
                   MORUA
                   {/* Decorative accent */}
-                  <span className="absolute -top-6 -right-6 md:-top-12 md:-right-12 text-2xl md:text-5xl text-gray/40 not-italic font-light">
+                  <span className="absolute -top-6 -right-6 md:-top-12 md:-right-12 text-2xl md:text-5xl text-gray/70 not-italic font-light">
                     *
                   </span>
                 </h1>

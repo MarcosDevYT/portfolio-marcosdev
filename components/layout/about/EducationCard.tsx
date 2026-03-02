@@ -227,7 +227,7 @@ const MobileCard = ({
           )}
         </div>
 
-        <p className="text-gray/80 text-base leading-relaxed">{description}</p>
+        <p className="text-gray text-base leading-relaxed">{description}</p>
       </div>
     </div>
   );

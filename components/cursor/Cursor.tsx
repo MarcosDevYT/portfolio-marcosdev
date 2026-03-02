@@ -4,9 +4,11 @@ import gsap from "gsap";
 import { useCursorHover } from "@/lib/hooks/useCursorProvider";
 import { useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 
 export default function Cursor() {
   const { isDesapear, isActive, isLink } = useCursorHover();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const mouse = useRef({ x: 0, y: 0 });
   const delayedMouse = useRef({ x: 0, y: 0 });
@@ -46,6 +48,8 @@ export default function Cursor() {
   };
 
   useEffect(() => {
+    if (isMobile) return;
+
     animate();
     window.addEventListener("mousemove", manageMouseMove);
 
@@ -55,7 +59,9 @@ export default function Cursor() {
         window.cancelAnimationFrame(rafId.current);
       }
     };
-  }, [isActive]);
+  }, [isActive, isMobile]);
+
+  if (isMobile) return null;
 
   return (
     <div
