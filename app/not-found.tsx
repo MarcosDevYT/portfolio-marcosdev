@@ -51,9 +51,8 @@ export default function NotFound() {
 
         <TextReveal delay={0.8} className="max-w-md mx-auto mb-12">
           <p className="text-gray text-lg md:text-xl font-light leading-relaxed">
-            Parece que te has aventurado en un rincón inexistente de mi
-            ecosistema digital. No te preocupes, incluso los mejores
-            exploradores se pierden a veces.
+            Parece que te has desviado de ruta. No te preocupes, a veces sucede.
+            Puedes volver al inicio y seguir explorando el sitio.
           </p>
         </TextReveal>
 

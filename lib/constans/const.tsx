@@ -35,10 +35,15 @@ export const footerItems = [
 
 // Social Links
 export const socialLinks = [
-  { href: "#", title: "LinkedIn" },
-  { href: "#", title: "GitHub" },
-  { href: "#", title: "Whatsapp" },
-  { href: "#", title: "Instagram" },
+  {
+    href: "https://www.linkedin.com/in/marcos-morua-a7b326295",
+    title: "LinkedIn",
+  },
+  { href: "https://github.com/MarcosDevYT", title: "GitHub" },
+  {
+    href: "https://wa.me/+5492804031239?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios.",
+    title: "Whatsapp",
+  },
 ];
 
 // Stack Items
