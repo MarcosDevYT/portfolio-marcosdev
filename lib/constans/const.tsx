@@ -41,6 +41,10 @@ export const socialLinks = [
   },
   { href: "https://github.com/MarcosDevYT", title: "GitHub" },
   {
+    href: "https://www.tiktok.com/@cocco_044?_r=1&_t=ZS-94Rkl7XNmfg",
+    title: "TikTok",
+  },
+  {
     href: "https://wa.me/+5492804031239?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios.",
     title: "Whatsapp",
   },
