@@ -22,6 +22,7 @@ export const menuItems = [
   { text: "Inicio", link: "/" },
   { text: "Sobre mí", link: "/sobre-mi" },
   { text: "Trabajos", link: "/trabajos" },
+  { text: "Stack", link: "#stack" },
   { text: "Contactame", link: "#contact" },
 ];
 
@@ -30,6 +31,7 @@ export const footerItems = [
   { text: "Inicio", link: "/" },
   { text: "Sobre mí", link: "/sobre-mi" },
   { text: "Trabajos", link: "/trabajos" },
+  { text: "Stack", link: "#stack" },
   { text: "Contactame", link: "#contact" },
 ];
 
@@ -47,6 +49,10 @@ export const socialLinks = [
   {
     href: "https://wa.me/+5492804031239?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios.",
     title: "Whatsapp",
+  },
+  {
+    href: "https://www.instagram.com/marcos.m.dev?igsh=YnVwbHNiN2M2cGMz",
+    title: "Instagram",
   },
 ];
 

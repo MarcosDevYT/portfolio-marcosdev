@@ -116,7 +116,7 @@ export const StackSection = () => {
   }, [isMobile]);
 
   return (
-    <Container className="flex-col pt-0">
+    <Container id="stack" className="flex-col pt-0">
       <div
         ref={titleContainerRef}
         className="w-full flex flex-col items-center justify-center mb-12 md:mb-0 py-12"

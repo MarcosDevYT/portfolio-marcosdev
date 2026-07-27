@@ -1,5 +1,94 @@
 export const ListaDeTrabajos = [
   {
+    id: 15,
+    title: "LiftFreelance – SaaS de Propuestas Comerciales con IA",
+    description:
+      "Plataforma SaaS para freelancers que analiza psicológicamente a clientes potenciales y genera propuestas comerciales personalizadas mediante IA. Incluye economía de tokens, suscripciones con Stripe, kanban de proyectos y panel de administración completo.",
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "GSAP",
+      "Lenis",
+      "NextAuth v5",
+      "Prisma",
+      "PostgreSQL",
+      "Stripe",
+      "Resend",
+      "Zod",
+      "React Hook Form",
+    ],
+    fecha: "2026",
+    fechaCompleta: "2025 - 2026",
+    mainImage: "/works/15/shot.png",
+    images: [
+      "/works/15/img1.png",
+      "/works/15/img2.png",
+      "/works/15/img3.png",
+      "/works/15/img4.png",
+    ],
+    link: "https://www.liftfreelance.com",
+    markdown: `## LiftFreelance – SaaS de Propuestas Comerciales con IA
+
+LiftFreelance es una plataforma SaaS para freelancers que conecta análisis psicológico de clientes con generación de propuestas comerciales personalizadas vía inteligencia artificial. No es un generador de texto genérico: analiza el perfil comportamental del cliente que publicó el proyecto y adapta cada propuesta a su forma de tomar decisiones.
+
+Soy cofundador de LiftFreelance y responsable del desarrollo full stack completo de la plataforma.
+
+### Funcionalidades principales
+- Análisis psicológico del cliente a partir del texto de su proyecto (12 perfiles de consumidor)
+- Generación de propuestas corta y larga personalizadas, calibradas al perfil detectado
+- Chat contextual por proyecto con acceso a todo el historial y análisis
+- Resumen automático del proyecto y recomendaciones estratégicas
+- Tablero Kanban para seguimiento de proyectos activos
+- Economía de tokens: cupo mensual por plan + tokens extra one-time
+- Panel de administración: gestión de usuarios, planes, campañas de email y encuestas
+
+### Arquitectura
+Aplicación full stack construida con Next.js 16 App Router y React 19. La autenticación usa NextAuth v5 con JWT sessions, soportando Google OAuth y Email/Password con bcryptjs. La base de datos es PostgreSQL (NeonDB) gestionada con Prisma 7 y PrismaAdapter. Los pagos se procesan vía Stripe con soporte de suscripciones mensuales y tokens extra one-time. El email transaccional y las campañas se manejan con Resend y React Email templates.
+
+El análisis de clientes y la generación de propuestas son delegados al motor propietario MarketAI Labs, consumido vía HTTP Basic Auth. La landing page integra animaciones con GSAP y scroll suave con Lenis.
+
+### Motor de IA
+El backend propio recibe el texto del proyecto y el perfil del freelancer, ejecuta análisis NLP determinístico y paraleliza dos llamadas a proveedores de IA con load balancing y failover automático, devolviendo propuesta corta (150-200 palabras) y propuesta larga con diagnóstico y plan de acción.`,
+  },
+  {
+    id: 2,
+    title: "Ultramadness – Plataforma de Eventos",
+    description:
+      "Plataforma web para gestión y visualización de eventos con CMS, autenticación, base de datos relacional y sistema de captación de leads segmentados.",
+    stack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Framer Motion",
+      "Auth.js",
+      "Prisma",
+      "PostgreSQL",
+      "Sanity",
+      "Resend",
+    ],
+    fecha: "2025",
+    fechaCompleta: "2025",
+    mainImage: "/works/2/shot.png",
+    images: ["/works/2/img1.png", "/works/2/img2.png", "/works/2/img3.png"],
+    link: "https://ultramadness.mx",
+    markdown: `## Ultramadness – Plataforma de Eventos
+
+Plataforma web para visualización y gestión de eventos musicales.
+
+### Funcionalidades principales
+- Visualización dinámica de eventos
+- CMS con Sanity
+- Sistema de captación de leads
+- Autenticación de usuarios
+- Envío de correos transaccionales
+
+### Arquitectura
+Desarrollado con Next.js, Prisma y PostgreSQL, con animaciones mediante Framer Motion y componentes UI con shadcn. Diseño responsive y estructura preparada para crecimiento.`,
+  },
+  {
     id: 1,
     title: "IdeasDev – Generador de Ideas con IA",
     description:
@@ -40,40 +129,28 @@ El proyecto demuestra integración avanzada de IA y arquitectura orientada a pro
     `,
   },
   {
-    id: 2,
-    title: "Ultramadness – Plataforma de Eventos",
+    id: 4,
+    title: "AFOCAT360 – Aplicación Móvil",
     description:
-      "Plataforma web para gestión y visualización de eventos con CMS, autenticación, base de datos relacional y sistema de captación de leads segmentados.",
-    stack: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Framer Motion",
-      "Auth.js",
-      "Prisma",
-      "PostgreSQL",
-      "Sanity",
-      "Resend",
-    ],
+      "Aplicación móvil desarrollada con React Native y Expo para consulta de certificados, búsqueda por placa, historial de registros y notificaciones push.",
+    stack: ["Expo", "React Native", "NativeWind"],
     fecha: "2025",
     fechaCompleta: "2025",
-    mainImage: "/works/2/shot.png",
-    images: ["/works/2/img1.png", "/works/2/img2.png", "/works/2/img3.png"],
-    link: "https://ultramadness.mx",
-    markdown: `## Ultramadness – Plataforma de Eventos
+    mainImage: "/works/4/shot.png",
+    images: ["/works/4/img1.png", "/works/4/img2.png", "/works/4/img3.png"],
+    link: "https://play.google.com/store/apps/details?id=com.marcosdevyt.Afocat360",
+    markdown: `## AFOCAT360 – Aplicación Móvil
 
-Plataforma web para visualización y gestión de eventos musicales.
+Aplicación móvil desarrollada para consulta y validación de certificados AFOCAT en Perú.
 
 ### Funcionalidades principales
-- Visualización dinámica de eventos
-- CMS con Sanity
-- Sistema de captación de leads
-- Autenticación de usuarios
-- Envío de correos transaccionales
+- Búsqueda por placa y certificado
+- Historial de consultas
+- Notificaciones push
+- Consumo seguro de APIs
 
 ### Arquitectura
-Desarrollado con Next.js, Prisma y PostgreSQL, con animaciones mediante Framer Motion y componentes UI con shadcn. Diseño responsive y estructura preparada para crecimiento.`,
+Desarrollada con React Native y Expo, utilizando NativeWind para estilos. Enfocada en rendimiento, experiencia móvil optimizada y seguridad en el manejo de datos.`,
   },
   {
     id: 3,
@@ -111,30 +188,6 @@ Profiler es una herramienta web que integra múltiples modelos de inteligencia a
 
 ### Arquitectura
 Desarrollado con Next.js, Prisma y Auth.js, enfocado en seguridad, escalabilidad y arquitectura modular para integración de múltiples modelos de IA.`,
-  },
-  {
-    id: 4,
-    title: "AFOCAT360 – Aplicación Móvil",
-    description:
-      "Aplicación móvil desarrollada con React Native y Expo para consulta de certificados, búsqueda por placa, historial de registros y notificaciones push.",
-    stack: ["Expo", "React Native", "NativeWind"],
-    fecha: "2025",
-    fechaCompleta: "2025",
-    mainImage: "/works/4/shot.png",
-    images: ["/works/4/img1.png", "/works/4/img2.png", "/works/4/img3.png"],
-    link: "https://play.google.com/store/apps/details?id=com.marcosdevyt.Afocat360",
-    markdown: `## AFOCAT360 – Aplicación Móvil
-
-Aplicación móvil desarrollada para consulta y validación de certificados AFOCAT en Perú.
-
-### Funcionalidades principales
-- Búsqueda por placa y certificado
-- Historial de consultas
-- Notificaciones push
-- Consumo seguro de APIs
-
-### Arquitectura
-Desarrollada con React Native y Expo, utilizando NativeWind para estilos. Enfocada en rendimiento, experiencia móvil optimizada y seguridad en el manejo de datos.`,
   },
   {
     id: 5,
@@ -439,5 +492,60 @@ Plataforma de comercio electrónico desarrollada bajo arquitectura headless, enf
 ### Arquitectura
 Construido con Next.js y React bajo una arquitectura desacoplada (headless). Sanity permite la gestión flexible de productos y contenido en tiempo real. Clerk gestiona autenticación y sesiones de usuario, mientras que Stripe procesa pagos de forma segura. La estructura está preparada para producción y escalabilidad futura.
 `,
+  },
+  {
+    id: 16,
+    title: "MarketAI Labs – Motor de IA Multiproveedor con Failover",
+    description:
+      "API REST + SSE que provee análisis psicológico de clientes mediante motor NLP propio y generación de contenido con múltiples proveedores de IA (Groq, OpenAI, Gemini, Cerebras) con load balancing por peso y failover automático.",
+    stack: [
+      "Hono",
+      "Node.js",
+      "TypeScript",
+      "Groq",
+      "OpenAI",
+      "Google Gemini",
+      "Cerebras",
+      "OpenRouter",
+      "SQLite",
+      "Drizzle ORM",
+      "Redis",
+      "Resend",
+      "Pino",
+    ],
+    fecha: "2025",
+    fechaCompleta: "2024 - 2025",
+    mainImage: "/works/16/shot.png",
+    images: [
+      "/works/16/img1.png",
+      "/works/16/img2.png",
+      "/works/16/img3.png",
+      "/works/16/img4.png",
+    ],
+    link: "https://www.marketailabs.com",
+    markdown: `## MarketAI Labs – Motor de IA Multiproveedor con Failover
+
+MarketAI Labs API es el motor que potencia el ecosistema de productos de MarketAI Labs. Es una API REST + SSE construida para ser agnóstica del cliente: cualquier sistema puede consumirla con Basic Auth y recibir análisis psicológico de texto, generación de propuestas y chat contextual con streaming.
+
+Desarrollé la plataforma web y el motor de esta API como parte de mi trabajo en MarketAI Labs.
+
+### Funcionalidades principales
+- Motor NLP propio 100% determinístico: detecta 12 perfiles de consumidor, nivel emocional, sesgo verbal, actitud y genera diagnóstico + recomendación estratégica
+- Generación de propuestas comerciales (short + long) personalizadas al perfil detectado
+- Chat contextual con streaming SSE y soporte de historial
+- Load balancing con Weighted Random Selection entre providers de IA
+- Failover automático: 3 intentos con providers distintos ante fallos, con cooldowns de 60s en Redis
+- CRUD dinámico de modelos con hot-reload del ServiceManager sin reiniciar el proceso
+- Sistema de monitoreo: métricas RPM, uso por modelo, tendencias 30d/12w/12m, top errores
+
+### Arquitectura
+Construido con Hono v4 sobre Node.js ESM, por su mínimo overhead y soporte nativo de streaming. El sistema de IA (ServiceManager) carga los modelos activos desde SQLite al inicio y los selecciona por peso configurado, con Redis como store de cooldowns para excluir providers fallidos temporalmente. Si Redis no está disponible, el sistema continúa sin cooldowns (graceful degradation).
+
+El motor NLP (AnalyzeService) es completamente determinístico: usa diccionarios semánticos propios clasificados por perfil de consumidor, nivel emocional y patrones verbales. No requiere ninguna llamada de IA para el análisis base.
+
+El monitoreo persiste en SQLite con Drizzle ORM: cada request, cada invocación de modelo y cada error queda logueado con contexto completo. Las alertas de error se envían por email con throttle de 5 minutos para evitar spam.
+
+### Providers soportados
+Groq, OpenAI, Google Gemini, Cerebras y OpenRouter — configurables dinámicamente desde la base de datos con peso, modelo y estado activo/inactivo.`,
   },
 ];
