@@ -9,7 +9,10 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Marcos Morua | Desarrollador Full Stack & MVP Builder",
   description:
-    "Especialista en desarrollo de productos digitales, MVPs y aplicaciones web escalables utilizando Next.js, React y TypeScript. Más de 3 años de experiencia transformando ideas en realidades digitales.",
+    "Marcos Adrián Morua Pino (Marcos Morua), Desarrollador Full Stack especialista en productos digitales, MVPs y aplicaciones web escalables con Next.js, React y TypeScript. Más de 3 años de experiencia transformando ideas en realidades digitales.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export const dynamic = "force-static";

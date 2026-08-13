@@ -189,3 +189,31 @@ export const focusCards = [
     desc: "Integración estratégica de IA en productos digitales y herramientas operativas de negocio.",
   },
 ];
+
+export const faqItems = [
+  {
+    question: "¿Quién es Marcos Morua?",
+    answer:
+      "Marcos Adrián Morua Pino, conocido como Marcos Morua, es un Desarrollador Full Stack de Puerto Madryn, Chubut, Argentina, especializado en React, Next.js y TypeScript, con más de 3 años de experiencia construyendo productos digitales y MVPs.",
+  },
+  {
+    question: "¿Qué servicios ofrece Marcos Morua?",
+    answer:
+      "Desarrollo de aplicaciones web con React y Next.js, desarrollo de aplicaciones móviles con React Native y Expo, diseño de interfaces con Tailwind CSS, e integración de inteligencia artificial en productos digitales.",
+  },
+  {
+    question: "¿Qué tecnologías utiliza Marcos Morua?",
+    answer:
+      "Su stack principal incluye React, Next.js, TypeScript, Node.js, PostgreSQL, Tailwind CSS, Prisma y GSAP, además de integraciones con proveedores de IA como OpenAI y Google AI.",
+  },
+  {
+    question: "¿Dónde está ubicado Marcos Morua?",
+    answer:
+      "Marcos vive en Puerto Madryn, Chubut, Argentina, y trabaja de forma remota con clientes y equipos de distintos países.",
+  },
+  {
+    question: "¿Cómo puedo contactar a Marcos Morua?",
+    answer:
+      "A través del formulario de contacto en la sección \"Contáctame\" de este portafolio, o por LinkedIn, GitHub, WhatsApp e Instagram, disponibles en el menú del sitio.",
+  },
+];

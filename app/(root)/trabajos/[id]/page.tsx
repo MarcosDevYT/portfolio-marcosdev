@@ -2,6 +2,12 @@ import { WorkPage } from "@/components/layout/work-id/workpage";
 import { ListaDeTrabajos } from "@/lib/constans/works";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, projectJsonLd } from "@/lib/seo";
+
+export function generateStaticParams() {
+  return ListaDeTrabajos.map((trabajo) => ({ id: String(trabajo.id) }));
+}
 
 export async function generateMetadata({
   params,
@@ -20,6 +26,9 @@ export async function generateMetadata({
   return {
     title: trabajo.title,
     description: trabajo.description,
+    alternates: {
+      canonical: `/trabajos/${trabajo.id}`,
+    },
     openGraph: {
       title: `${trabajo.title} | Marcos Morua`,
       description: trabajo.description,
@@ -53,6 +62,14 @@ export default async function TrabajoDetailPage({
 
   return (
     <>
+      <JsonLd data={projectJsonLd(trabajo)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Inicio", url: "/" },
+          { name: "Trabajos", url: "/trabajos" },
+          { name: trabajo.title, url: `/trabajos/${trabajo.id}` },
+        ])}
+      />
       <WorkPage trabajo={trabajo} />
     </>
   );

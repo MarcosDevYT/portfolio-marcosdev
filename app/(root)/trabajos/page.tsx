@@ -4,11 +4,16 @@ import { WorkCard } from "@/components/WorkCard";
 import { ListaDeTrabajos } from "@/lib/constans/works";
 import Container from "@/components/layout/Container";
 import { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd, projectListJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Trabajos Seleccionados",
   description:
-    "Explora mis proyectos destacados: desde plataformas SaaS con IA y aplicaciones móviles hasta sistemas de seguros y e-commerce headless.",
+    "Explora los proyectos destacados de Marcos Adrián Morua Pino (Marcos Morua): desde plataformas SaaS con IA y aplicaciones móviles hasta sistemas de seguros y e-commerce headless.",
+  alternates: {
+    canonical: "/trabajos",
+  },
 };
 
 export const dynamic = "force-static";
@@ -16,6 +21,14 @@ export const dynamic = "force-static";
 export default function TrabajosPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Inicio", url: "/" },
+          { name: "Trabajos", url: "/trabajos" },
+        ])}
+      />
+      <JsonLd data={projectListJsonLd(ListaDeTrabajos)} />
+
       <div
         className="min-h-screen w-full flex flex-col items-center justify-start pt-0 md:pt-20"
         data-bgcolor="#ffffff"

@@ -1,0 +1,31 @@
+# Marcos Morua — Portfolio
+
+> Marcos Adrián Morua Pino (Marcos Morua) es Desarrollador Full Stack de Puerto Madryn, Chubut, Argentina, especializado en React, Next.js y TypeScript, con más de 3 años de experiencia construyendo MVPs y productos digitales escalables.
+
+## Páginas principales
+
+- [Inicio](https://portfolio-marcosdev.vercel.app/): presentación, stack tecnológico y proyectos destacados.
+- [Sobre mí](https://portfolio-marcosdev.vercel.app/sobre-mi): biografía, formación académica, enfoque profesional y preguntas frecuentes.
+- [Trabajos](https://portfolio-marcosdev.vercel.app/trabajos): listado completo de proyectos desarrollados, cada uno con su propia página de detalle.
+
+## Datos clave
+
+- Nombre completo: Marcos Adrián Morua Pino
+- Nombre profesional / marca: Marcos Morua
+- Rol: Desarrollador Full Stack
+- Ubicación: Puerto Madryn, Chubut, Argentina
+- Experiencia: más de 3 años en desarrollo web profesional
+- Stack principal: React, Next.js, TypeScript, Node.js, PostgreSQL, Tailwind CSS, Prisma, GSAP
+- Formación: Licenciatura en Informática (Universidad Siglo 21, en curso, inicio 2026), Desarrollo Full Stack (CoderHouse, 2024-2025), cursos profesionales de Meta (Coursera, 2024)
+- Contacto: formulario en la sección "Contáctame" del sitio, o vía LinkedIn, GitHub, WhatsApp e Instagram
+
+## Proyectos destacados
+
+- LiftFreelance (cofundador y desarrollador full stack): SaaS de propuestas comerciales con IA para freelancers, con análisis psicológico de clientes, economía de tokens y suscripciones vía Stripe.
+- MarketAI Labs (desarrollador): motor de IA multiproveedor (Groq, OpenAI, Google Gemini, Cerebras) con load balancing y failover automático para análisis de clientes y generación de contenido.
+- IdeasDev: plataforma SaaS de generación de ideas y seguimiento de proyectos con IA.
+- Ultramadness: plataforma web de gestión y visualización de eventos.
+- AFOCAT360: aplicación móvil para consulta de certificados vehiculares (React Native + Expo).
+- Profiler: herramienta de análisis de perfiles comerciales con múltiples modelos de IA.
+
+Más de una docena de proyectos adicionales (e-commerce, LMS, marketplaces, landing pages SaaS) están documentados en la sección Trabajos del sitio.

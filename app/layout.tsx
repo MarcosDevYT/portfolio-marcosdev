@@ -5,35 +5,43 @@ import ReactLenis from "lenis/react";
 import { CursorProvider } from "@/lib/hooks/useCursorProvider";
 import { inter, satoshi, satoshiVariable } from "@/lib/fonts";
 import { PageRevealer } from "@/components/animate-components/PageRevealer";
+import { JsonLd } from "@/components/JsonLd";
+import { PERSON, SITE_URL, personJsonLd, websiteJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-marcosdev.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Marcos Morua | Desarrollador Full Stack",
     template: "%s | Marcos Morua",
   },
   description:
-    "Desarrollador Full Stack especializado en aplicaciones web modernas y construcción de MVPs con JavaScript, React y Next.js. Más de 3 años de experiencia creando soluciones digitales.",
+    "Marcos Adrián Morua Pino (Marcos Morua) es Desarrollador Full Stack especializado en aplicaciones web modernas y construcción de MVPs con JavaScript, React y Next.js. Más de 3 años de experiencia creando soluciones digitales.",
   keywords: [
     "Marcos Morua",
+    "Marcos Adrián Morua Pino",
+    "Marcos Adrian Morua Pino",
     "Marcos Morua Pino",
+    "Portafolio Marcos Morua",
     "Desarrollador Full Stack",
+    "Desarrollador Full Stack Argentina",
     "Next.js",
     "React",
     "TypeScript",
     "JavaScript",
     "MVP Builder",
     "Desarrollo Web",
+    "Puerto Madryn",
     "Argentina",
   ],
-  authors: [
-    { name: "Marcos Morua", url: "https://portfolio-marcosdev.vercel.app" },
-  ],
-  creator: "Marcos Morua",
+  authors: [{ name: PERSON.name, url: SITE_URL }],
+  creator: PERSON.name,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: "https://portfolio-marcosdev.vercel.app",
+    url: SITE_URL,
     siteName: "MarcosMorua Portfolio",
     title: "Marcos Morua | Desarrollador Full Stack",
     description:
@@ -80,6 +88,9 @@ export default function RootLayout({
             <body
               className={`${inter.variable} ${satoshi.variable} ${satoshiVariable.variable} font-inter bg-background text-foreground antialiased`}
             >
+              <JsonLd data={personJsonLd()} />
+              <JsonLd data={websiteJsonLd()} />
+
               <PageRevealer />
 
               <div>{children}</div>
